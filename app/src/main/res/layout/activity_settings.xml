@@ -39,7 +39,8 @@
         android:minHeight="50dp"
         android:textColor="#000000"
         android:singleLine="true"
-        android:imeOptions="actionNext"/>
+        android:imeOptions="actionNext"
+        android:capitalize="words" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -73,7 +74,8 @@
             android:minHeight="30dp"
             android:textColor="#000000"
             android:singleLine="true"
-            android:imeOptions="actionDone"/>
+            android:imeOptions="actionDone"
+            android:capitalize="words" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -87,7 +89,8 @@
             android:minHeight="30dp"
             android:textColor="#000000"
             android:singleLine="true"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:capitalize="words" />
     </LinearLayout>
 
     <LinearLayout
@@ -109,7 +112,8 @@
             android:minHeight="30dp"
             android:textColor="#000000"
             android:singleLine="true"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:capitalize="words" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -123,7 +127,8 @@
             android:minHeight="30dp"
             android:textColor="#000000"
             android:singleLine="true"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:capitalize="words" />
     </LinearLayout>
 
     <LinearLayout
@@ -145,7 +150,8 @@
             android:minHeight="30dp"
             android:textColor="#000000"
             android:singleLine="true"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:capitalize="words" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -159,7 +165,8 @@
             android:minHeight="30dp"
             android:textColor="#000000"
             android:singleLine="true"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:capitalize="words" />
     </LinearLayout>
 
     <LinearLayout
@@ -181,7 +188,8 @@
             android:minHeight="30dp"
             android:textColor="#000000"
             android:singleLine="true"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:capitalize="words" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -195,7 +203,8 @@
             android:minHeight="30dp"
             android:textColor="#000000"
             android:singleLine="true"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionNext"
+            android:capitalize="words" />
     </LinearLayout>
 
     <Button
