@@ -107,7 +107,9 @@
             android:layout_margin="10dp"
             android:paddingLeft="5dp"
             android:minHeight="30dp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
 
         <EditText
             android:layout_width="fill_parent"
@@ -119,7 +121,9 @@
             android:hint="Button 4"
             android:paddingLeft="5dp"
             android:minHeight="30dp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
     </LinearLayout>
 
     <LinearLayout
@@ -139,7 +143,9 @@
             android:layout_margin="10dp"
             android:paddingLeft="5dp"
             android:minHeight="30dp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
 
         <EditText
             android:layout_width="fill_parent"
@@ -151,7 +157,9 @@
             android:hint="Button 6"
             android:paddingLeft="5dp"
             android:minHeight="30dp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
     </LinearLayout>
 
     <LinearLayout
@@ -171,7 +179,9 @@
             android:layout_margin="10dp"
             android:paddingLeft="5dp"
             android:minHeight="30dp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
 
         <EditText
             android:layout_width="fill_parent"
@@ -183,7 +193,9 @@
             android:hint="Button 8"
             android:paddingLeft="5dp"
             android:minHeight="30dp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
     </LinearLayout>
 
     <Button
