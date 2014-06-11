@@ -39,12 +39,12 @@ public class settings extends ActionBarActivity {
             new AlertDialog.Builder(this)
                     .setTitle("Confirm user")
                     .setMessage("Are you " + "\"" + String.valueOf(shared.getString("text_0", "") + "\"" + "?"))
-                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             // continue
                         }
                     })
-                    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             text[0].setText("");
                         }
@@ -64,7 +64,7 @@ public class settings extends ActionBarActivity {
         text[0] = (EditText) findViewById(R.id.username); // username
         final Button confirm = (Button)findViewById(R.id.confirm_settings);
 
-        class Buttons {
+       /* class Buttons {
             public boolean buttons()
             {
                 text[0].addTextChangedListener(new TextWatcher() {
@@ -86,7 +86,7 @@ public class settings extends ActionBarActivity {
                 return true;
 
                 }
-            }
+            }*/
 
         for (int i=0; i<9; i++) {
             if(shared.contains("text_"+i)) {
@@ -94,29 +94,47 @@ public class settings extends ActionBarActivity {
             }
         }
 
+
+
 /*        if(shared.contains("text_0"))
             text[0].setText(String.valueOf(shared.getString("text_0", "0")));  // get the value with the key  but return 0 if issue
         if(shared.contains("text_1"))
             text[1].setText(String.valueOf(shared.getString("text_1", "0")));  // get the value with the key  but return 0 if issue*/
 
-        if ((!text[0].getText().toString().trim().isEmpty()))  //check that username field is not empty
-            confirm.setEnabled(true);
+/*        if ((!text[0].getText().toString().trim().isEmpty()))  //check that username field is not empty
+            confirm.setEnabled(true);*/
 
-        Buttons btn = new Buttons();
-        btn.buttons();
+/*        Buttons btn = new Buttons();
+        btn.buttons();*/
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final SharedPreferences.Editor editor = shared.edit();
-                String[] fields_text = new String[text.length];
-                for (int i=0; i<text.length; i++) {
-                    fields_text[i] = text[i].getText().toString();
-                    editor.putString("text_"+i, fields_text[i]);
-                    editor.commit();
+                if(text[0].getText().toString().trim().length() != 0) {
+                    if(text[1].getText().toString().trim().length() != 0 && text[2].getText().toString().trim().length() != 0  && text[3].getText().toString().trim().length() != 0 && text[4].getText().toString().trim().length() != 0 && text[5].getText().toString().trim().length() != 0 && text[6].getText().toString().trim().length() != 0 && text[7].getText().toString().trim().length() != 0  && text[8].getText().toString().trim().length() != 0) {
+
+                        final SharedPreferences.Editor editor = shared.edit();
+                        String[] fields_text = new String[text.length];
+                        for (int i = 0; i < text.length; i++) {
+                            fields_text[i] = text[i].getText().toString();
+                            editor.putString("text_" + i, fields_text[i]);
+                            editor.commit();
+
+                        }
+                        Intent intent = new Intent(settings.this, buttons_screen.class);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Please enter a button label",
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
-                Intent intent = new Intent(settings.this, buttons_screen.class);
-                startActivity(intent);
+                else{
+                    Toast.makeText(getApplicationContext(), "Please enter a username ",
+                            Toast.LENGTH_LONG).show();
+                }
+
             }
         });
     }

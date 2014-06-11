@@ -1,9 +1,12 @@
 package com.romanmitch.broad_street_police_app.app;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,9 +16,22 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.TextView;
 
+import com.makemyandroidapp.googleformuploader.GoogleFormUploader;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
 
 public class buttons_screen extends ActionBarActivity {
 
+
+    // GPSTracker class
+    GPS gps;
     static String button1;
     static String button2;
     static String button3;
@@ -62,7 +78,66 @@ public class buttons_screen extends ActionBarActivity {
             btn[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(getApplicationContext(), "Click "+ii+"!",Toast.LENGTH_SHORT).show();
+                    String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+                    gps = new GPS(buttons_screen.this);
+                    if (gps.canGetLocation()) {
+                        if (((gps.getLatitude() == 0.0) && (gps.getLongitude() == 0.0))) {
+                            Toast.makeText(getApplicationContext(), "No GPS yet, please try again",
+                                    Toast.LENGTH_LONG).show();
+
+                        } else {
+
+
+
+                            double latitude = gps.getLatitude();
+                            double longitude = gps.getLongitude();
+                            StringBuilder sb = new StringBuilder();
+                            Geocoder gc = new Geocoder(buttons_screen.this, Locale.getDefault());
+                            try {
+                                List<Address> addresses = gc.getFromLocation(latitude, longitude, 5);
+
+                                if (addresses.size() > 0) {
+                                    Address address = addresses.get(0);
+                                    for (int i = 0; i < address.getMaxAddressLineIndex(); i++)
+                                        sb.append(address.getAddressLine(i)).append("\n");
+
+
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                            GoogleFormUploader uploader = new GoogleFormUploader("1A2swvqW_akwg4aWL3-6FPJExVT2kpC0hb6pMOXx_PJc");
+                            uploader.addEntry("2058901428", shared.getString("text_0", ""));
+                            try {
+                                uploader.addEntry("755055969", URLEncoder.encode(String.valueOf(btn[ii].getText()), "UTF-8"));
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            }
+
+                            uploader.addEntry("1963076528", String.valueOf(gps.getLatitude()));
+                            uploader.addEntry("322839136", String.valueOf(gps.getLongitude()));
+                            uploader.addEntry("493297396", " "+sb.toString());
+                            uploader.upload();
+
+
+                            Toast.makeText(getApplicationContext(), "Sent",
+                                    Toast.LENGTH_LONG).show();
+
+                            // \n is for new line
+                        }
+
+
+                    } else {
+                        // can't get location
+                        // GPS or Network is not enabled
+                        // Ask user to enable GPS/network in settings
+                        gps.showSettingsAlert();
+                    }
+
+                    //Toast.makeText(getApplicationContext(), "Click "+ii+"!",Toast.LENGTH_SHORT).show();
+
+
                 }
             });
         }

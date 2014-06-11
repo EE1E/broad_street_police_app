@@ -190,6 +190,6 @@
         android:layout_gravity="center_horizontal"
         android:minHeight="50dp"
         android:clickable="true"
-        android:enabled="false" />
+        android:enabled="true" />
 
 </LinearLayout>
