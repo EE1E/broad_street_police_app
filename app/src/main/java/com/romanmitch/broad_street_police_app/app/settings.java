@@ -127,12 +127,12 @@ public class settings extends ActionBarActivity {
                     else
                     {
                         Toast.makeText(getApplicationContext(), "Please enter a button label",
-                                Toast.LENGTH_LONG).show();
+                                Toast.LENGTH_SHORT).show();
                     }
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Please enter a username ",
-                            Toast.LENGTH_LONG).show();
+                            Toast.LENGTH_SHORT).show();
                 }
 
             }
