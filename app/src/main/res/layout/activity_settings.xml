@@ -1,0 +1,195 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:baselineAligned="false">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Enter Username:"
+        android:id="@+id/textView2"
+        android:textColor="#ffffff"
+        android:typeface="normal"
+        android:textAlignment="viewStart"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="2dp"
+        android:textSize="15dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/username"
+        android:background="@android:color/background_light"
+        android:hint="Username"
+        android:autoText="false"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:paddingLeft="5dp"
+        android:maxHeight="50dp"
+        android:minHeight="50dp"
+        android:textColor="#000000"
+        android:textCursorDrawable="@null"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Edit button label to add button:"
+        android:id="@+id/textView"
+        android:textColor="#ffffff"
+        android:typeface="normal"
+        android:textAlignment="viewStart"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingRight="2dp"
+        android:textSize="15dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/btntxt1"
+            android:background="@android:color/background_light"
+            android:hint="Button 1"
+            android:autoText="false"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:paddingLeft="5dp"
+            android:minHeight="30dp"
+            android:textColor="#000000" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btntxt2"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:layout_margin="10dp"
+            android:hint="Button 2"
+            android:paddingLeft="5dp"
+            android:minHeight="30dp"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/btntxt3"
+            android:background="@android:color/background_light"
+            android:hint="Button 3"
+            android:autoText="false"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:paddingLeft="5dp"
+            android:minHeight="30dp"
+            android:textColor="#000000" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btntxt4"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:layout_margin="10dp"
+            android:hint="Button 4"
+            android:paddingLeft="5dp"
+            android:minHeight="30dp"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/btntxt5"
+            android:background="@android:color/background_light"
+            android:hint="Button 5"
+            android:autoText="false"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:paddingLeft="5dp"
+            android:minHeight="30dp"
+            android:textColor="#000000" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btntxt6"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:layout_margin="10dp"
+            android:hint="Button 6"
+            android:paddingLeft="5dp"
+            android:minHeight="30dp"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/btntxt7"
+            android:background="@android:color/background_light"
+            android:hint="Button 7"
+            android:autoText="false"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:paddingLeft="5dp"
+            android:minHeight="30dp"
+            android:textColor="#000000" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btntxt8"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:layout_margin="10dp"
+            android:hint="Button 8"
+            android:paddingLeft="5dp"
+            android:minHeight="30dp"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="149dp"
+        android:layout_height="wrap_content"
+        android:text="Confirm"
+        android:id="@+id/confirm_settings"
+        android:layout_margin="5dp"
+        android:layout_gravity="center_horizontal"
+        android:minHeight="50dp"
+        android:clickable="true"
+        android:enabled="false" />
+
+</LinearLayout>
