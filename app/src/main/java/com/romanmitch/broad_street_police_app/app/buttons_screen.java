@@ -204,13 +204,11 @@ public class buttons_screen extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        /*switch (item.getItemId()) {
-            case R.id.:
-                //Toast.makeText(getApplicationContext(), "Settings",Toast.LENGTH_SHORT).show();
-                return true;
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                finish();
             default:
                 return super.onOptionsItemSelected(item);
-        }*/
-        return super.onOptionsItemSelected(item);
+        }
     }
 }
