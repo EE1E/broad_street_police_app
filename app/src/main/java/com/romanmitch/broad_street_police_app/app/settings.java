@@ -111,7 +111,7 @@ public class settings extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 if(text[0].getText().toString().trim().length() != 0) {
-                    if(text[1].getText().toString().trim().length() != 0 && text[2].getText().toString().trim().length() != 0  && text[3].getText().toString().trim().length() != 0 && text[4].getText().toString().trim().length() != 0 && text[5].getText().toString().trim().length() != 0 && text[6].getText().toString().trim().length() != 0 && text[7].getText().toString().trim().length() != 0  && text[8].getText().toString().trim().length() != 0) {
+                    if(text[1].getText().toString().trim().length() != 0 || text[2].getText().toString().trim().length() != 0  || text[3].getText().toString().trim().length() != 0 || text[4].getText().toString().trim().length() != 0 || text[5].getText().toString().trim().length() != 0 || text[6].getText().toString().trim().length() != 0 || text[7].getText().toString().trim().length() != 0  || text[8].getText().toString().trim().length() != 0) {
 
                         final SharedPreferences.Editor editor = shared.edit();
                         String[] fields_text = new String[text.length];
