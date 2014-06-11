@@ -38,7 +38,8 @@
         android:maxHeight="50dp"
         android:minHeight="50dp"
         android:textColor="#000000"
-        android:textCursorDrawable="@null"/>
+        android:singleLine="true"
+        android:imeOptions="actionNext"/>
 
     <TextView
         android:layout_width="fill_parent"
@@ -70,11 +71,13 @@
             android:layout_margin="10dp"
             android:paddingLeft="5dp"
             android:minHeight="30dp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
 
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:id="@+id/btntxt2"
             android:layout_weight="1"
             android:background="@android:color/background_light"
@@ -82,7 +85,9 @@
             android:hint="Button 2"
             android:paddingLeft="5dp"
             android:minHeight="30dp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
     </LinearLayout>
 
     <LinearLayout
@@ -106,7 +111,7 @@
 
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:id="@+id/btntxt4"
             android:layout_weight="1"
             android:background="@android:color/background_light"
@@ -138,7 +143,7 @@
 
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:id="@+id/btntxt6"
             android:layout_weight="1"
             android:background="@android:color/background_light"
@@ -170,7 +175,7 @@
 
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:id="@+id/btntxt8"
             android:layout_weight="1"
             android:background="@android:color/background_light"
