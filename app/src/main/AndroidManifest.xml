@@ -8,7 +8,7 @@
         android:label="Broad_Street_Police_app"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.romanmitch.broad_street_police_app.app.settings"
+            android:name=".settings"
             android:label="Broad Street Police test" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,14 +17,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.romanmitch.broad_street_police_app.app.buttons_screen"
+            android:name=".buttons_screen"
             android:label="Buttons" >
+        </activity>
+        <activity
+            android:name=".Map"
+            android:label="@string/title_activity_map" >
+        </activity>
+        <activity
+            android:name=".web"
+            android:label="@string/title_activity_web"
+            android:parentActivityName=".buttons_screen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="buttons_screen" />
         </activity>
     </application>
 
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
 
 </manifest>

@@ -204,11 +204,28 @@ public class buttons_screen extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent1 = new Intent(buttons_screen.this, web.class);
+        final SharedPreferences.Editor editor = shared.edit();
         switch (item.getItemId()) {
-            case R.id.action_settings:
+            case R.id.action_settings: {
                 finish();
+                break;
+            }
+            case R.id.map_page: {
+                editor.putString("web", "map");
+                editor.commit();
+                startActivity(intent1);
+                break;
+            }
+            case R.id.spreadsheet_page: {
+                editor.putString("web", "spreadsheet");
+                editor.commit();
+                startActivity(intent1);
+                break;
+            }
             default:
                 return super.onOptionsItemSelected(item);
         }
+        return super.onOptionsItemSelected(item);
     }
 }

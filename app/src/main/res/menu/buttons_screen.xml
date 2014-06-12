@@ -7,4 +7,12 @@
         android:title="@string/action_settings"
         android:orderInCategory="100"
         app:showAsAction="never" />
+    <item android:id="@+id/map_page"
+        android:title="Map"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/spreadsheet_page"
+        android:title="Spreadsheet"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
 </menu>
