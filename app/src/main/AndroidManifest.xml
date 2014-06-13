@@ -3,6 +3,7 @@
     package="com.romanmitch.broad_street_police_app.app" >
 
     <application
+        android:hardwareAccelerated="true"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="Broad_Street_Police_app"

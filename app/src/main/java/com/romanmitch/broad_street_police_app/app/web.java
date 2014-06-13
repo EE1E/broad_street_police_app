@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.app.Activity;
@@ -30,17 +31,30 @@ public class web extends ActionBarActivity {
         webView = (WebView) findViewById(R.id.webview);
         if(shared.getString("web", "").equals("map")) {
             webView.setWebViewClient(new WebViewClient());
-            webView.loadUrl("http://www.google.com/fusiontables/embedviz?q=select+col3+from+1tWJClbFUNMsZCipW_vE-iw3pHrheRNMFVLUdkog1&viz=MAP&h=false&lat=52.43964717472843&lng=-1.9000556754779154&t=1&z=13&l=col3&y=2&tmplt=2&hml=TWO_COL_LAT_LNG");
-            webView.setVerticalScrollBarEnabled(false);
             WebSettings webSettings = webView.getSettings();
-            webSettings.setJavaScriptEnabled(true);
+            webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+            webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+            webView.getSettings().setJavaScriptEnabled(true);
+
+            webView.loadUrl("http://www.google.com/fusiontables/embedviz?q=select+col3+from+1tWJClbFUNMsZCipW_vE-iw3pHrheRNMFVLUdkog1&viz=MAP&h=false&lat=52.43964717472843&lng=-1.9000556754779154&t=1&z=13&l=col3&y=2&tmplt=2&hml=TWO_COL_LAT_LNG");
+
         }
         if(shared.getString("web", "").equals("spreadsheet")) {
             webView.setWebViewClient(new WebViewClient());
-            webView.loadUrl("http://docs.google.com/spreadsheets/d/1AR9ypWeN5ty60hQvucjPqjnincKno_EzzBj8RYVG1Js/edit#gid=75854638");
-            webView.setVerticalScrollBarEnabled(false);
-            WebSettings webSettings = webView.getSettings();
-            webSettings.setJavaScriptEnabled(true);
+              WebSettings webSettings = webView.getSettings();
+            webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+            webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+            webView.getSettings().setJavaScriptEnabled(true);
+            //webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
+
+            String summary ="<iframe src=\"https://docs.google.com/spreadsheets/d/1AR9ypWeN5ty60hQvucjPqjnincKno_EzzBj8RYVG1Js/pubhtml?widget=true&amp;headers=false\"  width=\"600\" height=\"780\" style=\"border: none;\"></iframe>";
+            webView.loadData(summary, "text/html", null);
+
+           // webView.loadUrl("http://docs.google.com/spreadsheets/d/1AR9ypWeN5ty60hQvucjPqjnincKno_EzzBj8RYVG1Js/edit#gid=75854638");
+
+           // webView.setVerticalScrollBarEnabled(false);
+
+
         }
 
 
