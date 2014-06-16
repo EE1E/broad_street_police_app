@@ -51,6 +51,7 @@ public class buttons_screen extends ActionBarActivity {
         setContentView(R.layout.activity_buttons_screen);
 
         final Button[] btn = new Button[8];
+        final Button btnz = (Button) findViewById(R.id.btnz);
 
         btn[0] = (Button)findViewById(R.id.button1);
         btn[1] = (Button)findViewById(R.id.button2);
@@ -60,6 +61,7 @@ public class buttons_screen extends ActionBarActivity {
         btn[5] = (Button)findViewById(R.id.button6);
         btn[6] = (Button)findViewById(R.id.button7);
         btn[7] = (Button)findViewById(R.id.button8);
+
 
         shared = getSharedPreferences("A", Context.MODE_PRIVATE);
 
@@ -71,7 +73,18 @@ public class buttons_screen extends ActionBarActivity {
                 btn[i].setVisibility(View.VISIBLE);
 
         }
-        //Code to respond to button clicks
+        btnz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttons_screen.this.finish();
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+
+
+        });
 
         for (int i=0; i<btn.length; i++){ //this for loop sets onClick() responses to each button click
             final int ii = i;
@@ -228,4 +241,7 @@ public class buttons_screen extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }
